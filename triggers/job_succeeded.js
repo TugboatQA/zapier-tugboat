@@ -49,7 +49,7 @@ module.exports = {
         type: 'string',
         label: 'Preview',
         dynamic: 'list_previews.preview.name',
-        required: false,
+        required: true,
         list: false,
         altersDynamicFields: false,
       },
