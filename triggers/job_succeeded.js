@@ -15,14 +15,10 @@ const perform = (z, bundle) => {
     };
   }
 
-  const failedResults = bundle.inputData.cancelled
-    ? ['error', 'cancelled']
-    : ['error'];
-
   return z.request(options).then((response) => {
     const jobs = response.json;
 
-    return jobs.filter((job) => failedResults.includes(job.result));
+    return jobs.filter((job) => job.result === 'success');
   });
 };
 
@@ -78,41 +74,29 @@ module.exports = {
         list: true,
         altersDynamicFields: false,
       },
-      {
-        key: 'cancelled',
-        type: 'boolean',
-        label: 'Consider cancelled a failure',
-        default: 'false',
-        helpText:
-          'Select true if you would like to considered cancelled jobs as a failed job.',
-        required: false,
-        list: false,
-        altersDynamicFields: false,
-      },
     ],
     sample: {
-      progress: 0,
-      target: 'previews',
-      action: 'rebuild',
-      object: '60ae4cc23e5c6473909df427',
-      args: {
-        preview: '60ae4cc23e5c6473909df427',
-        children: false,
-        force: false,
+      "progress": 0,
+      "target": "previews",
+      "action": "refresh",
+      "object": "60ad43d03e5c64a24e9d2575",
+      "args": {
+        "preview": "60ad43d03e5c64a24e9d2575",
+        "children": true,
+        "force": true
       },
-      createdAt: '2021-05-26T14:22:55.043Z',
-      updatedAt: '2021-05-26T14:23:03.554Z',
-      startedAt: '2021-05-26T14:22:55.091Z',
-      endedAt: '2021-05-26T14:23:03.532Z',
-      message:
-        'Cannot rebuild preview (Tugboat Error 1046): 60ae59bfcde72037426fd6a3 was cancelled',
-      result: 'error',
-      id: '60ae59bfcde72037426fd6a3',
-      type: 'job',
-      job: '60ae59bfcde72037426fd6a3',
-      project: '5fc6717502f60b6e8ad324ec',
-      repo: '60ad4392cde720fae86f213b',
-      preview: '60ae4cc23e5c6473909df427',
+      "createdAt": "2021-07-14T20:55:19.645Z",
+      "updatedAt": "2021-07-14T20:55:52.155Z",
+      "startedAt": "2021-07-14T20:55:19.708Z",
+      "endedAt": "2021-07-14T20:55:51.528Z",
+      "message": null,
+      "result": "success",
+      "id": "60ef4f3780afb0ff61415bdd",
+      "type": "job",
+      "job": "60ef4f3780afb0ff61415bdd",
+      "project": "5fc6717502f60b6e8ad324ec",
+      "repo": "60ad4392cde720fae86f213b",
+      "preview": "60ad43d03e5c64a24e9d2575"
     },
     outputFields: [
       { key: 'progress', type: 'integer' },
