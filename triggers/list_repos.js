@@ -30,7 +30,6 @@ module.exports = {
       autodelete: true,
       build_timeout: 3600,
       createdAt: '2019-09-17T16:38:49.924Z',
-      deploy_id: 1234567890,
       deploy_public:
         "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCxgtsuIGC+H0YZuJx/jlE66xsyAo8rKtoPJbsNww1R+Upzaw5RLbiasUmvtCmt6dSUERnFgnKXgll+QboZaPMJYo0hbYvuCd/+SxZQAKb9rpTEBP9aKgvHvMHKI1b9WNxtdrN7uKqbhvqALA9tNOD7alSB5tPdw+57n99SDquZ7X4wq4fuoi4hV0cgp5dlvsN0kJPildikYMENZPG7duCJXJSp5nvxUBXsrJYm9b7lQmmA1nYdxP+18CGcJa6Hap39RSJrKQIL9uxWN5QY9DXLNh4l8Hm9AnXNbptuGUXyyAJDpklfuYDQtXEmYXXo6HP/AccKwDKcxo9/pDKzu859'",
       envvars: [],
@@ -39,7 +38,6 @@ module.exports = {
       id: '5d810c19f6f82083ed65ef03',
       ip_allow: [],
       ip_deny: [],
-      link: 'https://github.com/myorg/myrepo',
       name: 'myorg/myrepo',
       owner: '5d9b5bfb52163ce4e1508c07',
       previews: [],
@@ -64,8 +62,6 @@ module.exports = {
       type: 'repo',
       updatedAt: '2019-10-07T18:30:18.725Z',
       users: [],
-      webhook:
-        'https://webhooks.tugboat.qa/github/k937etwgurfsbvh08d9chifqmj6vyset',
     },
     outputFields: [
       { key: 'autobuild', type: 'boolean' },
