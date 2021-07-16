@@ -12,7 +12,6 @@ const updatePreviewCreate = require('./creates/update_preview.js');
 const findPreviewCreate = require('./creates/find_preview.js');
 const suspendPreviewCreate = require('./creates/suspend_preview.js');
 const findBasePreviewsSearch = require('./searches/find_base_previews.js');
-const findPreviewsSearch = require('./searches/find_previews.js');
 
 module.exports = {
   version: require('./package.json').version,
@@ -36,6 +35,5 @@ module.exports = {
   },
   searches: {
     [findBasePreviewsSearch.key]: findBasePreviewsSearch,
-    [findPreviewsSearch.key]: findPreviewsSearch,
   },
 };
