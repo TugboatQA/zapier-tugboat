@@ -51,7 +51,6 @@ module.exports = {
       locked: false,
       mail: ['5d9b842d52163c3f95508c26'],
       name: 'string',
-      orphaned: '5d9b842252163ca8a1508c11',
       preview: '5d9b842252163ca8a1508c11',
       project: '5d810c19f6f8203d5b65ef01',
       provider: 'bitbucket',
