@@ -15,6 +15,8 @@ const findBasePreviewsSearch = require('./searches/find_base_previews.js');
 
 const findPreviews = require("./searches/previews");
 
+const findJobs = require("./searches/jobs");
+
 module.exports = {
   version: require('./package.json').version,
   platformVersion: require('zapier-platform-core').version,
@@ -37,6 +39,7 @@ module.exports = {
   },
   searches: {
     [findBasePreviewsSearch.key]: findBasePreviewsSearch,
-    [findPreviews.key]: findPreviews
+    [findPreviews.key]: findPreviews,
+    [findJobs.key]: findJobs
   },
 };
