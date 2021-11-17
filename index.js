@@ -13,6 +13,8 @@ const findPreviewCreate = require('./creates/find_preview.js');
 const suspendPreviewCreate = require('./creates/suspend_preview.js');
 const findBasePreviewsSearch = require('./searches/find_base_previews.js');
 
+const findPreviews = require("./searches/previews");
+
 module.exports = {
   version: require('./package.json').version,
   platformVersion: require('zapier-platform-core').version,
@@ -35,5 +37,6 @@ module.exports = {
   },
   searches: {
     [findBasePreviewsSearch.key]: findBasePreviewsSearch,
+    [findPreviews.key]: findPreviews
   },
 };
