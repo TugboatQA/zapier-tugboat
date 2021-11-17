@@ -37,7 +37,7 @@ module.exports = {
         label: 'Repository',
         type: 'string',
         dynamic: 'list_repos.repo.name',
-        required: true,
+        required: false,
         list: false,
         altersDynamicFields: false,
       },
