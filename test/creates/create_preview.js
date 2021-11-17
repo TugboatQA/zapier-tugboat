@@ -19,7 +19,11 @@ describe('Create - create_preview', () => {
         oauth_token_secret: process.env.OAUTH_TOKEN_SECRET,
       },
 
-      inputData: {},
+      inputData: {
+        repo: process.env.TUGBOAT_REPO,
+        name: "main",
+        type: "branch",
+      },
     };
 
     const result = await appTester(

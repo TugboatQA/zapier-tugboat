@@ -14,7 +14,7 @@ const perform = (z, bundle) => {
     response.throwForStatus();
     const results = response.json;
 
-    return results.filter((preview) => preview.anchor);
+    return results.filter((preview) => preview.anchor && (!bundle.inputData.ref || preview.ref === bundle.inputData.ref));
   });
 };
 
@@ -27,7 +27,7 @@ module.exports = {
         label: 'Project',
         type: 'string',
         dynamic: 'list_projects.project.name',
-        required: true,
+        required: false,
         list: false,
         altersDynamicFields: false,
       },
@@ -39,6 +39,14 @@ module.exports = {
         required: true,
         list: false,
         altersDynamicFields: false,
+      },
+      {
+        key: 'ref',
+        label: 'Ref',
+        type: 'string',
+        required: false,
+        list: false,
+        helpText: 'Optional. The git ref to find a Base Preview for. This can be a pull request number, branch, tag, or commit hash',
       },
     ],
     sample: {

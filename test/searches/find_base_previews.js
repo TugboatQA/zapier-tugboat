@@ -19,7 +19,9 @@ describe('Search - find_base_previews', () => {
         oauth_token_secret: process.env.OAUTH_TOKEN_SECRET,
       },
 
-      inputData: {},
+      inputData: {
+        repo: process.env.TUGBOAT_REPO,
+      },
     };
 
     const results = await appTester(
@@ -27,7 +29,9 @@ describe('Search - find_base_previews', () => {
       bundle
     );
     results.should.be.an.Array();
-    results.length.should.be.aboveOrEqual(1);
+    results.length.should.be.aboveOrEqual(2);
     results[0].should.have.property('id');
+    results[0].should.have.property('anchor');
+    results[0].anchor.should.be.eql(true);
   });
 });
