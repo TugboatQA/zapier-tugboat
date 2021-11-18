@@ -22,6 +22,10 @@ const perform = (z, bundle) => {
   return z.request(options).then((response) => {
     const jobs = response.json;
 
+    if (!jobs.length) {
+      return [];
+    }
+
     return jobs.filter((job) => failedResults.includes(job.result));
   });
 };
